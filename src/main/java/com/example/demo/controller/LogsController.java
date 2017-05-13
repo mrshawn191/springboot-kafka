@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.BeansException;
