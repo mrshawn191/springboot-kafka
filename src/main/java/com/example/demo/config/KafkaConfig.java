@@ -22,16 +22,19 @@ import java.util.Map;
 public class KafkaConfig
 {
 
-    public static String getTopic()
+    public static String getLogTopic()
     {
         return "logs";
     }
 
-    public static String getMessageKey()
+    public static String getLogMessageKey()
     {
         return "logs.key";
     }
 
+    /**
+     * Gets default producer properties
+     */
     public static Map<String, Object> getProducerProperties()
     {
         Map<String, Object> properties = getDefaultKafkaProperties();
@@ -47,6 +50,9 @@ public class KafkaConfig
         return properties;
     }
 
+    /**
+     * Gets default consumer properties
+     */
     public static Map<String, Object> getConsumerProperties()
     {
         Map<String, Object> properties = getDefaultKafkaProperties();
@@ -138,7 +144,7 @@ public class KafkaConfig
         String value = System.getenv(url);
         if (value == null)
         {
-            throw new IllegalArgumentException("Environment variable " + value + " is not set");
+            throw new IllegalArgumentException("Environment variable is not set");
         }
         return value;
     }
